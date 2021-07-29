@@ -7,10 +7,10 @@ const Settings = {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: '表妹电玩',
+  title: '表妹电玩游戏推荐系统',
   pwa: false,
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   iconfontUrl: '',
-  menuRender:false,
+  //menuRender:false,
 };
 export default Settings;

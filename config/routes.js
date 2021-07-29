@@ -28,6 +28,12 @@ export default [
     component: './Test',
   },
   {
+    path: '/editor',
+    name: '编辑页',
+    icon: 'smile',
+    component: './Editor',
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',
