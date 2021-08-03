@@ -70,6 +70,24 @@ export default () => {
             },
           ]}
         />
+        <ProFormRadio.Group
+          name="radio"
+          label="人群"
+          options={[
+            {
+              label: 'item 1',
+              value: 'a',
+            },
+            {
+              label: 'item 2',
+              value: 'b',
+            },
+            {
+              label: 'item 3',
+              value: 'c',
+            },
+          ]}
+        />
         <ProFormCheckbox.Group
           name="checkbox-group"
           label="属性"
