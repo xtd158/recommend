@@ -4,11 +4,23 @@ import {Button, Col, Form, Image, Input, Row} from "antd"
 const {ipcRenderer} = window.require('electron')
 
 export default ({form}) => {
-  const downLoad = useCallback(() => {
-    ipcRenderer.send('load-cover:url', 'fsdfsdfsfss')
+  const downLoad = useCallback(async () => {
+    const {cover_url} = await form.validateFields(['cover_url'])
+    ipcRenderer.send('load-cover:url', cover_url)
   }, [])
   return <Fragment>
-    <Form.Item label="封面" name="cover_url">
+    <Form.Item required label="封面" name="cover_url"
+               rules={[{
+                 type: 'url',
+                 whitespace: true,
+                 required: true
+               },
+                 {
+                   validator: (_, value) => {
+
+                   }
+                 }
+               ]}>
       <Row>
         <Col span={7}>
           <Input placeholder="请粘贴游戏封面的网址"/>
