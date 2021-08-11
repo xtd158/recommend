@@ -1,7 +1,8 @@
 import {Card, Row, Col, Checkbox, Form, Image, Input, Button} from 'antd';
-import ProForm, {ProFormUploadButton, ProFormText, ProFormCheckbox, ProFormRadio} from '@ant-design/pro-form';
+import ProForm, {ProFormText, ProFormCheckbox, ProFormRadio} from '@ant-design/pro-form';
 import {PageContainer} from '@ant-design/pro-layout';
 import {players, genre, language, group, tags} from './options_data'
+import Cover from './components/Cover'
 
 export default () => {
   return <PageContainer content="添加编辑游戏">
@@ -13,6 +14,7 @@ export default () => {
         onFinish={() => {
         }}
       >
+
         <ProFormText
           width="md"
           label="中文名称"
@@ -40,20 +42,7 @@ export default () => {
           placeholder="请粘贴游戏封面的网址"
           rules={[]}
         />
-        <Form.Item label="封面">
-          <Row>
-            <Col span={7}>
-              <Input placeholder="请粘贴游戏封面的网址"/>
-            </Col>
-            <Col span={2} offset={1}>
-              <Button>下载</Button>
-            </Col>
-          </Row>
-        </Form.Item>
-        <Row>
-          <Col offset={2}>
-            <Image width={100} height={100} src=""/></Col>
-        </Row>
+        <Cover/>
         <ProFormRadio.Group
           name="radio"
           label="游玩人数"
