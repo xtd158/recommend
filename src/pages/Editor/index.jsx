@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import {Card, Row, Col, Checkbox, Form, Image, Input, Button} from 'antd';
 import ProForm, {ProFormText, ProFormCheckbox, ProFormRadio} from '@ant-design/pro-form';
 import {PageContainer} from '@ant-design/pro-layout';
@@ -5,9 +6,11 @@ import {players, genre, language, group, tags} from './options_data'
 import Cover from './components/Cover'
 
 export default () => {
+  const [form] = Form.useForm();
   return <PageContainer content="添加编辑游戏">
     <Card bordered={false}>
       <ProForm
+        form={form}
         name="basic"
         layout="horizontal"
         labelCol={{span: 2}}
@@ -42,7 +45,7 @@ export default () => {
           placeholder="请粘贴游戏封面的网址"
           rules={[]}
         />
-        <Cover/>
+        <Cover form={form}/>
         <ProFormRadio.Group
           name="radio"
           label="游玩人数"
