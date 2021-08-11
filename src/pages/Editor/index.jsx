@@ -38,13 +38,6 @@ export default () => {
           name="alias"
           placeholder="请输入游戏的其他名称，比如简称"
         />
-        <ProFormText
-          width="md"
-          label="封面"
-          name="chinese"
-          placeholder="请粘贴游戏封面的网址"
-          rules={[]}
-        />
         <Cover form={form}/>
         <ProFormRadio.Group
           name="radio"
@@ -64,7 +57,7 @@ export default () => {
           options={language}
           required
         />
-        <ProFormRadio.Group
+        <ProFormCheckbox.Group
           name="radio"
           label="人群"
           options={group}

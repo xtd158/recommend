@@ -1,12 +1,16 @@
 const {ipcMain} = require('electron')
 const download = require('download')
 
-const dirName = '/Users/xiaotengda/work/code/antd_pro/resource'
-
 function listen() {
-  ipcMain.on('load-cover:url', async (event, arg) => {
-    await download(arg, dirName)
-    event.reply('load-cover:url-reply', 'success')
+  ipcMain.on('load-cover:url', (event, {cover_url, name, dirName}) => {
+    console.log(cover_url)
+    download(cover_url, dirName, name)
+      .then(() => {
+        event.reply('load-cover:url-reply', 'success')
+      })
+      .catch(() => {
+        event.reply('load-cover:url-reply', 'fail')
+      })
   })
 }
 
