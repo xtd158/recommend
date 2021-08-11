@@ -1,9 +1,11 @@
-import {Fragment, useCallback} from "react";
-import {Button, Col, Form, Image, Input, Row} from "antd";
+import {Fragment, useCallback} from "react"
+import {Button, Col, Form, Image, Input, Row} from "antd"
+
+const {ipcRenderer} = window.require('electron')
 
 export default () => {
   const downLoad = useCallback(() => {
-    console.log('fsfsfsdf')
+    ipcRenderer.send('load-cover:url', 'fsdfsdfsfss')
   }, [])
   return <Fragment>
     <Form.Item label="封面">

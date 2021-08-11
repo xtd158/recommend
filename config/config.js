@@ -68,4 +68,7 @@ export default defineConfig({
   mfsu: {},
   webpack5: {},
   exportStatic: {},
+  chainWebpack(memo, { env, webpack, createCSSRule,config }) {
+    //memo.target('electron-renderer')
+  }
 });
