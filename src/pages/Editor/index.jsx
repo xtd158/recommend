@@ -14,10 +14,10 @@ export default () => {
         name="basic"
         layout="horizontal"
         labelCol={{span: 2}}
-        onFinish={() => {
+        onFinish={(values) => {
+          console.log(values)
         }}
       >
-
         <ProFormText
           width="md"
           label="中文名称"
@@ -38,32 +38,33 @@ export default () => {
           name="alias"
           placeholder="请输入游戏的其他名称，比如简称"
         />
-        <Cover form={form}/>
+        {/*<Cover form={form}/>*/}
         <ProFormRadio.Group
-          name="radio"
+          name="Number_of_people"
           label="游玩人数"
           options={players}
           required
         />
         <ProFormCheckbox.Group
-          name="radio"
+          name="game_type"
           label="类型"
           options={genre}
           required
         />
         <ProFormRadio.Group
-          name="radio"
+          name="Language"
           label="语言"
           options={language}
           required
         />
         <ProFormCheckbox.Group
-          name="radio"
+          name="crowd"
           label="人群"
           options={group}
           required
         />
         <Form.Item label="属性"
+                   name="attributes"
                    required>
           <Checkbox.Group style={{width: '100%'}}>
             <Row gutter={[0, 8]}>
