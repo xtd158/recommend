@@ -21,14 +21,14 @@ export default () => {
         <ProFormText
           width="md"
           label="中文名称"
-          name="chinese"
+          name="chinese_name"
           placeholder="请输入游戏的中文名称"
           required
         />
         <ProFormText
           width="md"
           label="英文名称"
-          name="english"
+          name="english_name"
           placeholder="请输入游戏的英文名称"
           required
         />
@@ -40,7 +40,7 @@ export default () => {
         />
         {/*<Cover form={form}/>*/}
         <ProFormRadio.Group
-          name="Number_of_people"
+          name="number_of_people"
           label="游玩人数"
           options={players}
           required
@@ -52,7 +52,7 @@ export default () => {
           required
         />
         <ProFormRadio.Group
-          name="Language"
+          name="language"
           label="语言"
           options={language}
           required
